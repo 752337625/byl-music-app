@@ -6,7 +6,8 @@
 		"build": "vue-tsc --noEmit && vite build",
 		"serve": "vite preview",
 		"prepare": "husky install",
-		"lint": "eslint --max-warnings 0 --fix"
+		"lint": "eslint --max-warnings 0 --fix",
+		"init": "eslint --init"
 	},
 	"lint-staged": {
 		"*.{vue,js,ts,jsx,tsx}": [
