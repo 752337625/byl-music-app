@@ -30,7 +30,7 @@ module.exports = {
 	 * plugin:vue/vue3-recommended->eslint-plugin-vue
 	 * plugin:@typescript-eslint/recommended->@typescript-eslint/eslint-plugin
 	 */
-	extends: ['eslint:recommended',  'plugin:vue/vue3-recommended', 'prettier','plugin:@typescript-eslint/recommended',],
+	extends: ['eslint:recommended',  'plugin:vue/vue3-recommended','plugin:@typescript-eslint/recommended', 'prettier'],
 	rules: {
 		'prettier/prettier': 'error',
 		'no-var': 'error', //禁止使用var
