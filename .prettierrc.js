@@ -9,7 +9,7 @@ module.exports = {
 	semi: true, //在语句末尾打印分号。
 	singleQuote: true, //使用单引号代替双引号。
 	tabWidth: 2, //指定每个缩进级别的空格数。
-  useTabs: true, //制表符将用于缩进。
+	useTabs: true, //制表符将用于缩进。
 	quoteProps: 'as-needed', //"<as-needed|consistent|preserve>"引用对象中的属性时更改。
 	trailingComma: 'all', //"<es5|none|all>"在多行逗号分隔的句法结构中尽可能打印尾随逗号。
 	bracketSpacing: true, //在对象文字中的括号之间打印空格。
@@ -19,5 +19,6 @@ module.exports = {
 	vueIndentScriptAndStyle: true, //是否缩进Vue文件中的代码<script>和<style>标签。
 	endOfLine: 'auto',
 	embeddedLanguageFormatting: 'auto',
-	requirePragma: true,
+	requirePragma: false, //设置为true prettier自动而格式化失效，必须在要格式化的文件头部添加vue:<!--  @prettier 、js:/***@prettier */等
+	insertPragma: false,
 };
