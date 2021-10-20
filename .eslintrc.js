@@ -23,14 +23,14 @@ module.exports = {
 	 * vue->eslint-plugin-vue
 	 * import->eslint-plugin-import
 	 */
-	plugins: ['vue', '@typescript-eslint', 'import', 'prettier'],
+	plugins: ['@typescript-eslint', 'import', 'prettier'],
 	/**
 	 * eslint:recommendede 启动eslint默认规则
 	 * prettier->eslintF-config-prettier 避免与eslint规则冲突，提高prettier规则权重
 	 * plugin:vue/vue3-recommended->eslint-plugin-vue
 	 * plugin:@typescript-eslint/recommended->@typescript-eslint/eslint-plugin
 	 */
-	extends: ['eslint:recommended',  'plugin:vue/vue3-recommended','plugin:@typescript-eslint/recommended', 'prettier'],
+	extends: ['eslint:recommended','plugin:vue/vue3-recommended','plugin:@typescript-eslint/recommended','prettier'],
 	rules: {
 		'prettier/prettier': 'error',
 		'no-var': 'error', //禁止使用var
