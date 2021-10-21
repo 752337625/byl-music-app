@@ -23,7 +23,7 @@ module.exports = {
 	 * vue->eslint-plugin-vue
 	 * import->eslint-plugin-import
 	 */
-	plugins: ['@typescript-eslint', 'import', 'prettier'],
+	plugins: ['vue', '@typescript-eslint', 'import', 'prettier'],
 	/**
 	 * eslint:recommendede 启动eslint默认规则
 	 * prettier->eslintF-config-prettier 避免与eslint规则冲突，提高prettier规则权重
@@ -32,12 +32,21 @@ module.exports = {
 	 */
 	extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
 	rules: {
+		/**
+		 * eslint:recommended
+		 */
 		'prettier/prettier': 'error',
 		'no-var': 'error', //禁止使用var
 		eqeqeq: 'error', //要求使用 === 和 !==
-		'no-irregular-whitespace': 'off', //这禁止掉 空格报错检查
+		'no-irregular-whitespace': 'error', //这禁止掉 空格报错检查
+		/**
+		 * vue
+		 */
 		'vue/script-setup-uses-vars': 'error', // 解决 注意该script非ts表示<script setup>中定义变量在<template>使用no-unused-vars问题
 		'vue/valid-template-root': 'error', //<template> </template>在没有子元素下不异常
+		/**
+		 * @typescript-eslint
+		 */
 		'@typescript-eslint/no-unused-vars': ['off'], //解决<script setup lang="ts"> <script lang="ts">中定义变量在<template>使用no-unused-vars问题
 		'@typescript-eslint/no-var-requires': ['off'], //解决requires异常
 	},
