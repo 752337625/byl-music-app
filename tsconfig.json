@@ -18,8 +18,8 @@
 			"@p/*": ["./plugins/*"],
 			"@r/*": ["./router/*"],
 			"@s/*": ["./store/*"],
-			"@t/*": ["./typings/*"],
-			"@u/*": ["./utiles/*"]
+			"@u/*": ["./utiles/*"],
+			"@v/*": ["./src/views/*"]
 		}
 	},
 	"exclude": ["node_modules", "test", "**/__tests__", "dist/**"],

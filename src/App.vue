@@ -1,10 +1,15 @@
 <script setup lang="ts">
-	import test from '@c/test.vue';
+	import BHeader from '@v/BylHeader';
+	import BMain from '@v/BylMain';
+	import BAside from '@v/BylAside';
+	import BFooter from '@v/BylFooter';
 </script>
-<script lang="ts">
-	function a() {
-		console.log();
-	}
-</script>
-<template><test></test><van-button type="primary">主要按钮</van-button> </template>
+<script lang="ts"></script>
+<template>
+	<byl-header></byl-header>
+	<byl-main>
+		<byl-aside></byl-aside>
+	</byl-main>
+	<byl-footer></byl-footer>
+</template>
 <style scoped></style>

@@ -12,10 +12,10 @@ export default defineConfig({
 			'@c': resolve(__dirname, './src/components'), //把components改为@c
 			'@crb': resolve(__dirname, 'css_reset_base'), //把css_reset_base改为@u
 			'@p': resolve(__dirname, 'plugins'), //把plugins改为@p
-			'@r': resolve(__dirname, 'router'), //把router改为@u
-			'@s': resolve(__dirname, 'store'), //把store改为@u
-			'@t': resolve(__dirname, 'typings'), //把typings改为@t
+			'@r': resolve(__dirname, 'router'), //把router改为@r
+			'@s': resolve(__dirname, 'store'), //把store改为@s
 			'@u': resolve(__dirname, 'utiles'), //把utiles改为@u
+			'@v': resolve(__dirname, './src/views'), //把views改为@v
 		},
 	},
 	server: {
