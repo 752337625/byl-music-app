@@ -1,6 +1,6 @@
 module.exports = {
 	root: true,
-	parser: 'vue-eslint-parser', //eslint-plugin-vue
+	parser: 'vue-eslint-parser', //vue-eslint-parser
 	parserOptions: {
 		parser: '@typescript-eslint/parser' /* 解析ts语法 */,
 		ecmaVersion: 2020,
