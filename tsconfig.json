@@ -12,14 +12,27 @@
 		"lib": ["esnext", "dom"],
 		"paths": {
 			"@/*": ["./src/*"],
-			"@p/*": ["./plugins/*"],
-			"@t/*": ["./typings/*"],
-			"@u/*": ["./utiles/*"],
 			"@a/*": ["./src/assets/*"],
 			"@c/*": ["./src/components/*"],
-			"@crb/*": ["./css_reset_base/*"]
+			"@crb/*": ["./css_reset_base/*"],
+			"@p/*": ["./plugins/*"],
+			"@r/*": ["./router/*"],
+			"@s/*": ["./store/*"],
+			"@t/*": ["./typings/*"],
+			"@u/*": ["./utiles/*"]
 		}
 	},
 	"exclude": ["node_modules", "test", "**/__tests__", "dist/**"],
-	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.d.ts",
+		"src/**/*.tsx",
+		"src/**/*.vue",
+		"plugins/**/*.ts",
+		"plugins/**/*.d.ts",
+		"router/**/*.ts",
+		"router/**/*.d.ts",
+		"store/**/*.ts",
+		"store/**/*.d.ts"
+	]
 }

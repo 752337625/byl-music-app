@@ -8,12 +8,14 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@': resolve(__dirname, 'src'), //把src改为@
-			'@p': resolve(__dirname, 'plugins'), //把plugins改为@p
-			'@t': resolve(__dirname, 'typings'), //把typings改为@t
-			'@u': resolve(__dirname, 'utiles'), //把utiles改为@u
 			'@a': resolve(__dirname, './src/assets'), //把assets改为@a
 			'@c': resolve(__dirname, './src/components'), //把components改为@c
 			'@crb': resolve(__dirname, 'css_reset_base'), //把css_reset_base改为@u
+			'@p': resolve(__dirname, 'plugins'), //把plugins改为@p
+			'@r': resolve(__dirname, 'router'), //把router改为@u
+			'@s': resolve(__dirname, 'store'), //把store改为@u
+			'@t': resolve(__dirname, 'typings'), //把typings改为@t
+			'@u': resolve(__dirname, 'utiles'), //把utiles改为@u
 		},
 	},
 	server: {
