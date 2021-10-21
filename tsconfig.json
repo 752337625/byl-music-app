@@ -9,7 +9,17 @@
 		"sourceMap": true,
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
-		"lib": ["esnext", "dom"]
+		"lib": ["esnext", "dom"],
+		"paths": {
+			"@/*": ["./src/*"],
+			"@p/*": ["./plugins/*"],
+			"@t/*": ["./typings/*"],
+			"@u/*": ["./utiles/*"],
+			"@a/*": ["./src/assets/*"],
+			"@c/*": ["./src/components/*"],
+			"@crb/*": ["./css_reset_base/*"]
+		}
 	},
+	"exclude": ["node_modules", "test", "**/__tests__", "dist/**"],
 	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

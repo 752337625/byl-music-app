@@ -1,8 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import '@p/index.js';
-import '@a/css/index.css';
-import { Button } from 'vant';
+import importPlugins from '@p/index'; //plugins
+import '@crb/index'; //css
 const app = createApp(App);
-app.use(Button);
+importPlugins(app); //插件引入在挂载DOM前面，否则引入失败
 app.mount('#app');

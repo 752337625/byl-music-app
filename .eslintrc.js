@@ -49,5 +49,6 @@ module.exports = {
 		 */
 		'@typescript-eslint/no-unused-vars': ['off'], //解决<script setup lang="ts"> <script lang="ts">中定义变量在<template>使用no-unused-vars问题
 		'@typescript-eslint/no-var-requires': ['off'], //解决requires异常
+		'@typescript-eslint/no-explicit-any': ['off'], //解决ts 无法使用any异常
 	},
 };
