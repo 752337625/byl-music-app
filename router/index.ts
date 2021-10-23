@@ -1,7 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+const routes: Array<RouteRecordRaw> = [];
 const router = createRouter({
 	history: createWebHistory(),
-	routes: [],
+	routes,
 });
 //全局前置守卫
 router.beforeEach((to, from) => {

@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"baseUrl": ".",
 		"target": "esnext",
 		"useDefineForClassFields": true,
 		"module": "esnext",
@@ -15,6 +16,7 @@
 			"@a/*": ["./src/assets/*"],
 			"@c/*": ["./src/components/*"],
 			"@crb/*": ["./css_reset_base/*"],
+			"@b/*": ["./build/*"],
 			"@p/*": ["./plugins/*"],
 			"@r/*": ["./router/*"],
 			"@s/*": ["./store/*"],
@@ -24,6 +26,8 @@
 	},
 	"exclude": ["node_modules", "test", "**/__tests__", "dist/**"],
 	"include": [
+		"build/**/*.ts",
+		"build/**/*.d.ts",
 		"src/**/*.ts",
 		"src/**/*.d.ts",
 		"src/**/*.tsx",
@@ -33,6 +37,7 @@
 		"router/**/*.ts",
 		"router/**/*.d.ts",
 		"store/**/*.ts",
-		"store/**/*.d.ts"
+		"store/**/*.d.ts",
+		"types/**/*.d.ts"
 	]
 }
