@@ -1,15 +1,17 @@
-<script setup lang="ts">
-	import BHeader from '@v/BylHeader';
-	import BMain from '@v/BylMain';
-	import BAside from '@v/BylAside';
-	import BFooter from '@v/BylFooter';
-</script>
-<script lang="ts"></script>
+<script setup lang="ts"></script>
 <template>
 	<byl-header></byl-header>
-	<byl-main>
-		<byl-aside></byl-aside>
-	</byl-main>
+	<byl-aside></byl-aside>
 	<byl-footer></byl-footer>
 </template>
+<script lang="ts">
+	import { defineAsyncComponent, defineComponent } from 'vue';
+	export default defineComponent({
+		components: {
+			BylHeader: defineAsyncComponent(() => import('@//viewsiews/BylHeader.vue')),
+			BylAside: defineAsyncComponent(() => import('@v/BylAside.vue')),
+			BylFooter: defineAsyncComponent(() => import('@v/BylFooter.vue')),
+		},
+	});
+</script>
 <style scoped></style>
