@@ -16,7 +16,6 @@
 			"@a/*": ["./src/assets/*"],
 			"@c/*": ["./src/components/*"],
 			"@crb/*": ["./css_reset_base/*"],
-			"@b/*": ["./build/*"],
 			"@p/*": ["./plugins/*"],
 			"@r/*": ["./router/*"],
 			"@s/*": ["./store/*"],

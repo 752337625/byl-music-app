@@ -8,7 +8,7 @@
 	import { defineAsyncComponent, defineComponent } from 'vue';
 	export default defineComponent({
 		components: {
-			BylHeader: defineAsyncComponent(() => import('@//viewsiews/BylHeader.vue')),
+			BylHeader: defineAsyncComponent(() => import('@v/BylHeader.vue')),
 			BylAside: defineAsyncComponent(() => import('@v/BylAside.vue')),
 			BylFooter: defineAsyncComponent(() => import('@v/BylFooter.vue')),
 		},

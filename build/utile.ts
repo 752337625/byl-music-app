@@ -1,31 +1,28 @@
+export function isDevFn(mode: string): boolean {
+	return mode === 'development';
+}
+
+export function isProFn(mode: string): boolean {
+	return mode === 'development';
+}
+
 /**
  *
  * @param env
- * @returns 转化后的
+ * @returns 转化后的 env
  */
 export function tconversionFn(envConf: Record<string, any>): ViteEnv {
 	const ret: any = {};
 	for (const envName of Object.keys(envConf)) {
-		const realName = envConf[envName].replace(/\\n/g, '\n');
-		console.log(typeof realName);
-		//
-		// realName = realName === 'true' ? true : realName === 'false' ? false : realName;
-		// if (envName === 'VITE_SEVER_PORT') {
-		// 	realName = Number(realName);
-		// }
-		// if (envName === 'VITE_SEVER_PROXY' && realName) {
-		// 	try {
-		// 		realName = JSON.parse(realName.replace(/'/g, '"'));
-		// 	} catch (error) {
-		// 		realName = '';
-		// 	}
-		// }
-		// ret[envName] = realName;
-		// if (typeof realName === 'string') {
-		// 	process.env[envName] = realName;
-		// } else if (typeof realName === 'object') {
-		// 	process.env[envName] = JSON.stringify(realName);
-		// }
+		let realName = envConf[envName].trim();
+		realName = realName === 'true' ? true : realName === 'false' ? false : realName;
+		if (envName === 'VITE_SEVER_PORT') {
+			realName = Number(realName);
+		}
+		if (envName === 'VITE_SEVER_PROXY' && realName) {
+			realName = JSON.parse(JSON.stringify(realName));
+		}
+		ret[envName] = realName;
 	}
 	return ret;
 }
