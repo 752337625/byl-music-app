@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
 	<byl-header></byl-header>
-	<byl-aside></byl-aside>
+	<byl-main></byl-main>
 	<byl-footer></byl-footer>
 </template>
 <script lang="ts">
@@ -9,7 +9,7 @@
 	export default defineComponent({
 		components: {
 			BylHeader: defineAsyncComponent(() => import('@v/BylHeader.vue')),
-			BylAside: defineAsyncComponent(() => import('@v/BylAside.vue')),
+			BylMain: defineAsyncComponent(() => import('@v/BylMain.vue')),
 			BylFooter: defineAsyncComponent(() => import('@v/BylFooter.vue')),
 		},
 	});

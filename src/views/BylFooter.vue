@@ -5,22 +5,11 @@
 <script lang="ts"></script>
 <template>
 	<van-tabbar v-model="active">
-		<van-tabbar-item icon="home-o">标签</van-tabbar-item>
-		<van-tabbar-item icon="search">标签</van-tabbar-item>
-		<van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-		<van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+		<van-tabbar-item icon="home-o">发现</van-tabbar-item>
+		<van-tabbar-item icon="search">博客</van-tabbar-item>
+		<van-tabbar-item icon="friends-o">我的</van-tabbar-item>
+		<van-tabbar-item icon="setting-o">关注</van-tabbar-item>
+		<van-tabbar-item icon="setting-o">云村</van-tabbar-item>
 	</van-tabbar>
 </template>
-<style scoped>
-	.byl-footer {
-		height: 50px;
-		background: #fff;
-		position: fixed;
-		bottom: 0;
-		right: 0;
-		left: 0;
-		z-index: 1500;
-		color: #333;
-		box-shadow: 0 0 5px #ddd;
-	}
-</style>
+<style scoped></style>

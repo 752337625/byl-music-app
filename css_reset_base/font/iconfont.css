@@ -1,0 +1,25 @@
+@font-face {
+	font-family: 'iconfont'; /* Project id 2894813 */
+	src: url('iconfont.woff2?t=1635246655398') format('woff2'), url('iconfont.woff?t=1635246655398') format('woff'),
+		url('iconfont.ttf?t=1635246655398') format('truetype');
+}
+
+.iconfont {
+	font-family: 'iconfont' !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-navicon:before {
+	content: '\e84e';
+}
+
+.icon-maikefeng-shi:before {
+	content: '\e697';
+}
+
+.icon-fangdajing:before {
+	content: '\e653';
+}

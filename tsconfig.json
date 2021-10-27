@@ -37,6 +37,7 @@
 		"router/**/*.d.ts",
 		"store/**/*.ts",
 		"store/**/*.d.ts",
-		"types/**/*.d.ts"
+		"types/**/*.d.ts",
+		"types/**/*.ts"
 	]
 }

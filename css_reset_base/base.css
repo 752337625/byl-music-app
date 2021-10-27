@@ -12,3 +12,10 @@ html,
 [v-cloak] {
 	display: none;
 }
+.byl-header,
+.byl-main {
+	background: var(--bly-body);
+}
+.byl-header > div {
+	height: 100%;
+}
