@@ -3,3 +3,7 @@ export interface SwipeInterFace {
 	pic: string;
 	typeTitle: string;
 }
+export interface BallInterFace {
+	id: string | number;
+	iconUrl: string;
+}

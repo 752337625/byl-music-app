@@ -44,6 +44,7 @@ module.exports = {
 		 */
 		'vue/script-setup-uses-vars': 'error', // 解决 注意该script非ts表示<script setup>中定义变量在<template>使用no-unused-vars问题
 		'vue/valid-template-root': 'error', //<template> </template>在没有子元素下不异常
+		'vue/no-mutating-props': 'off', //eslint不建议子元素通过v-model修改父元素传的props值
 		/**
 		 * @typescript-eslint
 		 */

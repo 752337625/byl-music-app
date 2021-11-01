@@ -6,9 +6,27 @@
 		<meta
 			name="viewport"
 			content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0, viewport-fit=cover" />
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<!-- Safari浏览器私有meta属性 -->
+		<meta name="apple-mobile-web-app-capable" content="no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<meta name="apple-mobile-web-app-title" content="APP name" />
+		<!-- QQ浏览器私有meta属性 -->
+		<meta name="x5-orientation" content="auto" />
+		<meta name="x5-fullscreen" content="auto" />
+		<meta name="x5-page-mode" content="app" />
+		<!-- UC浏览器私有meta属性 -->
+		<meta name="screen-orientation" content="portrait" />
+		<meta name="full-screen" content="no" />
+		<meta name="browsermode" content="application" />
+		<meta name="layoutmode" content="fitscreen" />
+		<meta name="nightmode" content="disable" />
+		<meta name="imagemode" content="force" />
+		<!-- 开启浏览器极速模式 -->
+		<meta name="renderer" content="webkit" />
 		<title>Byl App</title>
 	</head>
-	<body>
+	<body ontouchstart>
 		<div id="app" v-cloak></div>
 		<script type="module" src="/src/main.ts"></script>
 	</body>

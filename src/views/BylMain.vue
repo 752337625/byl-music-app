@@ -21,7 +21,8 @@
 </script>
 <style scoped>
 	.byl-main {
+		overflow-y: auto;
+		transform: translateZ(0);
 		height: calc(100% - 100px);
-		padding: var(--byl-padding);
 	}
 </style>

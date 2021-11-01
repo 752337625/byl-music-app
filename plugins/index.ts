@@ -3,8 +3,10 @@ import router from '@r/index';
 import store from '@s/index';
 import { App } from 'vue';
 import './lib-flexible';
+import fastclickHandler from './fastclick';
 function importPlugins(app: App): void {
 	vantHandler(app);
+	fastclickHandler();
 	app.use(router);
 	app.use(store);
 }

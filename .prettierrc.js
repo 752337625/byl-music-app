@@ -1,7 +1,7 @@
 // pretter没有对代码的质量进行检查的能力，其只会对代码风格按照指定的规范进行统一，避免一个项目中出现多种不同的代码风格。
 /**
- * eslint-config-prettier:让所有可能会与 prettier 规则存在冲突的 eslint rule，失效，并使用 prettier 的规则进行代码检查。
- * 相当于，用 prettier 的规则，覆盖掉 eslint:recommended 的部分规则。 后面 prettier 格式化，也会根据这个规则来。因此，不会再有冲突。注意要放* 到组后面。
+ * eslint-config-prettier:让所有可能会与 prettier 规则存在冲突的 eslint rule，失效，并使用prettier的规则进行代码检查。
+ * 相当于，用 prettier 的规则，覆盖掉eslint:recommended 的部分规则。 后面 prettier 格式化，也会根据这个规则来。因此，不会再有冲突。注意* 要放到组后面。
  * eslint-plugin-prettier:将 prettier 的能力集成到 eslint 中。按照 prettier 的规则检查代码规范性，并进行修复。
  */
 module.exports = {
