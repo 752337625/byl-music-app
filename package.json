@@ -18,6 +18,7 @@
 		"*.{scss,css,json,yaml,yml,md,html}": "prettier --write"
 	},
 	"dependencies": {
+		"better-scroll": "^2.4.2",
 		"fastclick": "v1.0.3",
 		"vant": "^3.2.5",
 		"vue": "^3.2.16",

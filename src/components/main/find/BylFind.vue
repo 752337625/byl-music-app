@@ -6,7 +6,7 @@
 		loading-text="加载中..."
 		style="min-height: 100%"
 		@refresh="onRefresh">
-		<van-swipe class="byl-swipe" :autoplay="6000">
+		<van-swipe class="byl-swipe" :autoplay="6000" lazy-render>
 			<van-swipe-item v-for="item in swipe" :key="item.bannerId">
 				<div>
 					<img :src="item.pic" />
@@ -22,8 +22,12 @@
 			</van-swipe-item>
 		</van-swipe>
 		<ul class="byl-pall">
-			<li v-for="item in ball" :key="item.id"><img :src="item.iconUrl" /></li>
+			<li v-for="item in ball" :key="item.id">
+				<p><img v-lazy="item.iconUrl" :src="item.iconUrl" /></p>
+				<span>{{ item.name }}</span>
+			</li>
 		</ul>
+		<p class="van-hairline--bottom" style="color: #9e9e9e"></p>
 	</van-pull-refresh>
 </template>
 <script lang="ts">
@@ -78,7 +82,6 @@
 		height: 100%;
 		width: 100%;
 	}
-
 	.byl-swipe > div p {
 		color: #fff;
 		font-size: 12px;
@@ -92,17 +95,29 @@
 		padding: 3px 10px;
 		border-radius: var(--byl-border-radius_10) 0 0 0;
 	}
-	/* .byl-pall li {
-		float: left;
-	} */
-	.byl-pall {
-		width: 100%;
-		height: 70px;
+	ul.byl-pall {
+		margin: 20px 0 15px var(--byl-padding_10);
 		display: flex;
 		white-space: nowrap;
+		overflow: hidden;
 	}
-	.byl-pall img {
-		width: 65px;
-		height: 70px;
+	ul.byl-pall li {
+		text-align: center;
+		padding-right: 18px;
+	}
+	ul.byl-pall li p {
+		font-size: 0;
+		border-radius: 50%;
+		background: #f74f4e;
+	}
+	ul.byl-pall li span {
+		font-size: 12px;
+		color: #7b7b7b;
+	}
+	ul.byl-pall img {
+		width: 50px;
+	}
+	[class*='van-hairline']::after {
+		border-color: #e7eaed;
 	}
 </style>

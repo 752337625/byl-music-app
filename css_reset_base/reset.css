@@ -89,13 +89,14 @@ video {
 	vertical-align: baseline;
 	box-sizing: border-box;
 	user-select: none;
+	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
 }
-
 body {
 	font-size: 18px;
 	background-color: #f5f5f5;
-	-webkit-text-size-adjust: none;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-overflow-scrolling: touch;
+	padding-right: calc(100vw - 100%);
 }
 /* HTML5 display-role reset for older browsers */
 article,
