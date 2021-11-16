@@ -1,5 +1,7 @@
 :root {
-	--bly-body: #fff;
+	--bly-body: #f8f8f8;
+	--bly-body-fff: #fff;
+	/* --bly-body: #f8f8f8;#f8f8f8 */
 	--byl-padding_10: 10px;
 	--byl-border-radius_10: 10px;
 }

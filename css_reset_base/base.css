@@ -19,3 +19,6 @@ html,
 .byl-header > div {
 	height: 100%;
 }
+.byl-padding {
+	padding: var(--byl-padding_10);
+}

@@ -1,7 +1,10 @@
 import { defineConfig, ConfigEnv, UserConfigExport, loadEnv } from 'vite';
 const { resolve } = require('path'); //必须要引入resolve
 import { tconversionFn } from './build/utile';
-import createdPluginsFn from './build/plugins';
+import pkg from '../package.json';
+import styleImport from 'vite-plugin-style-import';
+import vue from '@vitejs/plugin-vue';
+import Banner from 'vite-plugin-banner';
 const pxtorem = require('postcss-pxtorem');
 export default ({ mode }: ConfigEnv): UserConfigExport => {
 	const root = process.cwd();
@@ -55,6 +58,20 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
 				},
 			},
 		},
-		plugins: createdPluginsFn(),
+		plugins: [
+			vue(),
+			styleImport({
+				libs: [
+					{
+						libraryName: 'vant',
+						esModule: true,
+						resolveStyle: name => `vant/es/${name}/style`,
+					},
+				],
+			}),
+			Banner(
+				`/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n * description: ${pkg.description}\n * author: ${pkg.author}\n * homepage: ${pkg.homepage}\n */`,
+			),
+		],
 	});
 };
