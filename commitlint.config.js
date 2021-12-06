@@ -15,6 +15,8 @@ module.exports = {
 				'revert', // 回滚到上一个版本
 				'style', //  仅仅修改了空格、格式缩进、逗号等等，不改变代码逻辑、css 修改
 				'test', //  测试用例，包括单元测试、集成测试等
+				'ci', //修改CI配置文件和脚本
+				'css', //只修改css样式
 			],
 		],
 		'header-max-length': [0, 'always', 2], //header 最长72

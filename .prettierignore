@@ -3,4 +3,3 @@
 .local
 **/*.svg
 **/*.sh
-/public/**
