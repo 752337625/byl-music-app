@@ -1,7 +1,7 @@
 import { defineConfig, ConfigEnv, UserConfigExport, loadEnv } from 'vite';
 const { resolve } = require('path'); //必须要引入resolve
 import { tconversionFn } from './build/utile';
-import pkg from '../package.json';
+import pkg from './package.json';
 import styleImport from 'vite-plugin-style-import';
 import vue from '@vitejs/plugin-vue';
 import Banner from 'vite-plugin-banner';

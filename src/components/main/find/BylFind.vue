@@ -9,8 +9,7 @@
 	</byl-pull-refresh> -->
 </template>
 <script lang="ts">
-	import { ref, defineComponent, defineAsyncComponent, nextTick } from 'vue';
-	import BetterScroll from 'better-scroll';
+	import { defineComponent, defineAsyncComponent } from 'vue';
 	export default defineComponent({
 		components: {
 			// BylPullRefresh: defineAsyncComponent(() => import('@/base/BylPullRefresh.vue')),
@@ -18,16 +17,7 @@
 			BylSwipe: defineAsyncComponent(() => import('./BylSwipe.vue')),
 		},
 		setup() {
-			nextTick(() => {
-				new BetterScroll('.byl-swipe-top', {
-					specifiedIndexAsContent: 1,
-					probeType: 3,
-				});
-			});
-			function RefreshHandler() {
-				console.log(1);
-			}
-			return { RefreshHandler };
+			return {};
 		},
 	});
 </script>
