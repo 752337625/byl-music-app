@@ -36,5 +36,20 @@
 	<body ontouchstart>
 		<div id="app" v-cloak></div>
 		<script type="module" src="/src/main.ts"></script>
+		<script>
+			document.body.addEventListener(
+				'touchmove',
+				e => {
+					e.preventDefault();
+				},
+				{ passive: false },
+			);
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker
+					.register('/sw/sw.js', { scope: '/sw/' })
+					.then(registration => console.log('ServiceWorker 注册成功！作用域为: ', registration.scope))
+					.catch(err => console.log('ServiceWorker 注册失败: ', err));
+			}
+		</script>
 	</body>
 </html>

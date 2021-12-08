@@ -2,7 +2,7 @@
 	"scope": "/",
 	"name": "鲸落音乐",
 	"short_name": "鲸落音乐",
-	"start_url": "/?from=homescreen",
+	"start_url": "/index.html",
 	"display": "standalone",
 	"description": "每天知道多一点.",
 	"dir": "rtl",
