@@ -38,6 +38,7 @@
 		"store/**/*.ts",
 		"store/**/*.d.ts",
 		"types/**/*.d.ts",
-		"types/**/*.ts"
+		"types/**/*.ts",
+		"plugins/indexedDB/indexedDB.js"
 	]
 }

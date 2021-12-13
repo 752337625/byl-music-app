@@ -1,0 +1,1 @@
+ manifest.json 主要用于Android/Chrome 添加主屏

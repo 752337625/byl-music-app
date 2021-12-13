@@ -2,40 +2,44 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" href="/favicon.ico" />
+
 		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 		<meta
 			name="viewport"
 			content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
-
-		<!-- Safari浏览器私有meta属性 -->
-		<!-- 添加到主屏幕后，全屏显示。 兼容性在ipone  11 上失效 注意：apple-touch-fullscreen 和apple-mobile-web-app-capable 不能同时设置否则apple-mobile-web-app-capable设置为yes时，不光菜单栏和地址栏不显示，移动端的状态栏也莫名消失了。而且消失后，页面顶部到了屏幕最上面。底部浏览器菜单栏尽管消失。但是元素还在占位-->
-		<!-- <meta name="apple-touch-fullscreen" content="yes" /> -->
-		<!-- 浏览器端设置看上面-->
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-		<!-- 添加到主屏的默认标题，在添加过程中用户也可以修改 -->
-		<meta name="apple-mobile-web-app-title" content="标题名称" />
-		<!-- QQ浏览器私有meta属性 -->
-		<meta name="x5-orientation" content="auto" />
-		<meta name="x5-fullscreen" content="auto" />
-		<meta name="x5-page-mode" content="app" />
-		<!-- UC浏览器私有meta属性 -->
-		<meta name="screen-orientation" content="portrait" />
-		<meta name="full-screen" content="no" />
-		<meta name="browsermode" content="application" />
-		<meta name="layoutmode" content="fitscreen" />
-		<meta name="nightmode" content="disable" />
-		<meta name="imagemode" content="force" />
-		<!-- 开启360浏览器的极速模式(webkit) -->
-		<meta name="renderer" content="webkit" />
 		<meta name="format-detection" content="telephone=no, email=no" />
-		<title>Byl App</title>
-		<link rel="manifest" href="/manifest.json" />
+		<title>鲸落云音乐</title>
+		<link rel="manifest" href="manifest.json" />
+		<!-- <link rel="icon" href="/logo/favicon.ico" /> -->
+		<!-- 主题颜色-Chrome M39中工具栏的颜色+ -->
+		<meta name="theme-color" content="#4374A5" />
+		<!-- favicon-16x16.png-经典的favicon，显示在选项卡中。favicon-32x32.png-用于Mac OS上的Safari。 -->
+		<link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png" />
+		<!-- window10开始菜单浏览中方块颜色， Win8 tile -->
+		<meta name="msapplication-TileColor" content="#2b5797" />
+		<meta name="msapplication-TileImage" content="/logo/mstile-144x144.png" />
+		<!-- PC端IOS系统底部banner显示的图标 -->
+		<link rel="mask-icon" href="/logo/safari-pinned-tab.svg" color="#b9652d" />
+		<!-- ios不同移动端添加主屏使用的图标,其实一个180 就够了 -->
+		<!-- <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/logo/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="/logo/apple-touch-icon-60x60.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/logo/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="/logo/apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/logo/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/logo/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/logo/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/logo/apple-touch-icon-152x152.png" /> -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon-180x180.png" />
+		<!-- IOS manifest.json 兼容 -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<meta name="apple-mobile-web-app-title" content="鲸落云" />
+		<meta name="apple-touch-fullscreen" content="yes" />
 	</head>
 	<body ontouchstart>
 		<div id="app" v-cloak></div>
 		<script type="module" src="/src/main.ts"></script>
+
 		<script>
 			document.body.addEventListener(
 				'touchmove',
@@ -45,10 +49,12 @@
 				{ passive: false },
 			);
 			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker
-					.register('/sw/sw.js', { scope: '/sw/' })
-					.then(registration => console.log('ServiceWorker 注册成功！作用域为: ', registration.scope))
-					.catch(err => console.log('ServiceWorker 注册失败: ', err));
+				window.addEventListener('load', function () {
+					navigator.serviceWorker
+						.register('/sw.js', { scope: '/' })
+						.then(registration => {})
+						.catch(err => console.log('ServiceWorker 注册失败: ', err));
+				});
 			}
 		</script>
 	</body>
