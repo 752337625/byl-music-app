@@ -5,22 +5,45 @@
  * 升级数据库版本会触发onupgradeneeded事件
  * 升级数据库必须大于当前版本，小于会报错。当前版本大于0
  */
-const request: IDBOpenDBRequest = indexedDB.open('byl-indexedDB', 1);
+const version = 2;
+const IDBDatabaseName = 'byl-indexedDB';
+const objectStoreNames: Array<DatabaseStore> = [
+	{
+		name: 'banner',
+		options: { keyPath: 'bannerId' },
+	},
+	{
+		name: 'test',
+		options: { keyPath: 'bannerId' },
+	},
+	{
+		name: 'name',
+		options: { keyPath: 'bannerId' },
+	},
+];
+const request: IDBOpenDBRequest = indexedDB.open(IDBDatabaseName, version);
 request.onerror = function (event) {
-	console.log('数据库打开报错');
+	console.log(event);
 };
-let db: IDBDatabase;
 request.onsuccess = function () {
-	db = request.result;
-	console.log(db);
-	console.log('数据库打开成功');
+	window.IDB = request.result;
 };
 request.onupgradeneeded = function (event) {
-	// let target = event.targe;
-	console.log(event.targe);
-	// console.log(event.target.result);
-	// let objectStore = db.createObjectStore('person', { keyPath: 'id' });
-	// console.log(objectStore);
+	console.log(event);
+	const newVersion = event.newVersion as number;
+	const oldVersion = event.oldVersion;
+	const target = event.target as IDBOpenDBRequest;
+	const db: IDBDatabase = target.result;
+	if (oldVersion && newVersion > oldVersion) {
+		objectStoreNames.forEach(i => {
+			db.deleteObjectStore(i.name);
+		});
+	}
+	objectStoreNames.forEach(i => {
+		if (!db.objectStoreNames.contains(i.name)) {
+			db.createObjectStore(i.name, i.options);
+		}
+	});
 };
 
 /**
