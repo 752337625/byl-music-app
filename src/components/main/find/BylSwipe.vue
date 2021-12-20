@@ -21,6 +21,7 @@
 	import { shallowRef, defineComponent } from 'vue';
 	import { SwipeInterFace } from './find';
 	import { count, getAll, add } from '@p/Dexie/objectStore';
+	import { getIDBIndex, count as indexCount, get } from '@p/Dexie/index';
 	export default defineComponent({
 		setup() {
 			let swipe = shallowRef<SwipeInterFace[]>([]);
@@ -28,8 +29,11 @@
 		},
 		mounted() {
 			this.cachesSwipefn();
+			let a = indexCount('banner', 'pic', 'readonly');
+			console.log(a);
 		},
 		methods: {
+			// http://p1.music.126.net/5LbGT8JAomIUQD7XIlP-TA==/109951166750404224.jpg
 			async cachesSwipefn() {
 				let res = (await count('banner')) as number;
 				if (!res) {
