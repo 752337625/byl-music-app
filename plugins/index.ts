@@ -4,7 +4,7 @@ import store from '@s/index';
 import { App } from 'vue';
 import './lib-flexible';
 import fastclickHandler from './fastclick';
-import './indexedDB/indexedDB';
+import './Dexie/indexedDB';
 function importPlugins(app: App): void {
 	vantHandler(app);
 	fastclickHandler();

@@ -1,4 +1,4 @@
-import { Button, Tabbar, TabbarItem, PullRefresh, Field, Icon, Swipe, SwipeItem, Empty, Lazyload } from 'vant';
+import { Button, Tabbar, TabbarItem, PullRefresh, Field, Icon, Swipe, SwipeItem, Empty, Lazyload, Overlay } from 'vant';
 import { App } from 'vue';
 function vantHandler(app: App) {
 	app.use(Button);
@@ -11,6 +11,7 @@ function vantHandler(app: App) {
 	app.use(SwipeItem);
 	app.use(Empty);
 	app.use(Lazyload);
+	app.use(Overlay);
 	// 注册时可以配置额外的选项
 	app.use(Lazyload, {
 		lazyComponent: true,

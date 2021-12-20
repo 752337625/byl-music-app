@@ -12,12 +12,12 @@ module.exports = {
 			tsx: true,
 		},
 	},
+	globals: { IDB: 'readonly' },
 	env: {
 		browser: true,
 		node: true,
 		commonjs: true,
 	},
-	globals: {},
 	/**
 	 * prettier->eslint-plugin-prettier
 	 * @typescript-eslint->@typescript-eslint/eslint-plugin

@@ -19,6 +19,6 @@ module.exports = {
 	vueIndentScriptAndStyle: true, //是否缩进Vue文件中的代码<script>和<style>标签。
 	endOfLine: 'auto',
 	embeddedLanguageFormatting: 'auto',
-	requirePragma: false, //设置为true prettier自动而格式化失效，必须在要格式化的文件头部添加vue:<!--  @prettier 、js:/***@prettier */等
+	requirePragma: false, //设置为true prettier自动格式化失效，必须在要格式化的文件头部添加vue:<!--  @prettier 、js:/***@prettier */等
 	insertPragma: false,
 };

@@ -10,12 +10,15 @@
 		"sourceMap": true,
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
+		"suppressImplicitAnyIndexErrors": true,
 		"lib": ["esnext", "dom"],
 		"paths": {
 			"@/*": ["./src/*"],
+			"@t/*": ["./types/*"],
 			"@a/*": ["./src/assets/*"],
 			"@c/*": ["./src/components/*"],
 			"@crb/*": ["./css_reset_base/*"],
+			"@d/*": ["./dom/*"],
 			"@p/*": ["./plugins/*"],
 			"@r/*": ["./router/*"],
 			"@s/*": ["./store/*"],
@@ -37,8 +40,7 @@
 		"router/**/*.d.ts",
 		"store/**/*.ts",
 		"store/**/*.d.ts",
-		"types/**/*.d.ts",
 		"types/**/*.ts",
-		"plugins/indexedDB/indexedDB.js"
+		"types/**/*.d.ts"
 	]
 }

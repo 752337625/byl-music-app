@@ -18,31 +18,40 @@
 	</div>
 </template>
 <script lang="ts">
-	import { shallowRef, ref, onMounted, defineComponent } from 'vue';
+	import { shallowRef, defineComponent } from 'vue';
 	import { SwipeInterFace } from './find';
+	import { count, getAll, add } from '@p/Dexie/objectStore';
 	export default defineComponent({
 		setup() {
 			let swipe = shallowRef<SwipeInterFace[]>([]);
-			let isLoading = ref<boolean>(false);
-			onMounted(() => {
-				getSwipe();
-			});
-			function getSwipe() {
+			return { swipe };
+		},
+		mounted() {
+			this.cachesSwipefn();
+		},
+		methods: {
+			async cachesSwipefn() {
+				let res = (await count('banner')) as number;
+				if (!res) {
+					this.getSwipe();
+				} else {
+					let res = (await getAll<Array<SwipeInterFace>>('banner')) as Array<SwipeInterFace>;
+					this.swipe = res;
+				}
+			},
+			getSwipe() {
 				fetch('/api/banner?type=2')
 					.then(res => {
 						return res.json();
 					})
 					.then(res => {
 						let { banners } = res;
-						swipe.value = banners;
+						banners.forEach((element: SwipeInterFace) => {
+							add<SwipeInterFace>('banner', element);
+						});
+						this.swipe = banners;
 					});
-			}
-			function onRefresh() {
-				setTimeout(() => {
-					isLoading.value = false;
-				}, 3000);
-			}
-			return { isLoading, onRefresh, swipe };
+			},
 		},
 	});
 </script>

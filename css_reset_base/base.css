@@ -22,3 +22,13 @@ html,
 .byl-padding {
 	padding: var(--byl-padding_10);
 }
+.byl-error {
+	color: var(--bly-body-fff);
+	font-size: var(--byl-font-size_18);
+	text-align: center;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	top: 19%;
+	left: 50%;
+	width: 87%;
+}

@@ -19,9 +19,11 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
 		resolve: {
 			alias: {
 				'@': resolve(__dirname, 'src'), //把src改为@
+				'@t': resolve(__dirname, 'types'), //把ypes改为#
 				'@a': resolve(__dirname, './src/assets'), //把assets改为@a
 				'@c': resolve(__dirname, './src/components'), //把components改为@c
-				'@crb': resolve(__dirname, 'css_reset_base'), //把css_reset_base改为@u
+				'@crb': resolve(__dirname, './css_reset_base'), //把css_reset_base改为@u
+				'@d': resolve(__dirname, './dom'), //把dom改为@d
 				'@p': resolve(__dirname, 'plugins'), //把plugins改为@p
 				'@r': resolve(__dirname, 'router'), //把router改为@r
 				'@s': resolve(__dirname, 'store'), //把store改为@s
