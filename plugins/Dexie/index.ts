@@ -1,5 +1,4 @@
 import { getIDBObjectStoreInfo } from '@p/Dexie/objectStore';
-import { formatNumber } from 'vant/lib/utils';
 /**
  * IDBIndex 对象
  * IDBIndex 对象代表数据库的索引，通过这个对象可以获取数据库里面的记录。
@@ -28,9 +27,64 @@ export function count(name: string, indexName: string, mode?: IDBTransactionMode
 	});
 }
 
-export function get<T>(name: string, indexName: string, key: string, mode?: IDBTransactionMode): Promise<T> {
+export function get<T>(
+	name: string,
+	indexName: string,
+	key: IDBValidKey | IDBKeyRange,
+	mode?: IDBTransactionMode,
+): Promise<T> {
 	return new Promise((r, j) => {
 		const request = getIDBIndex(name, indexName, mode).get(key);
+		request.onsuccess = () => {
+			r(request.result);
+		};
+		request.onerror = () => {
+			j(request.error);
+		};
+	});
+}
+export function getKey(
+	name: string,
+	indexName: string,
+	key: IDBValidKey | IDBKeyRange,
+	mode?: IDBTransactionMode,
+): Promise<IDBValidKey | undefined> {
+	return new Promise((r, j) => {
+		const request = getIDBIndex(name, indexName, mode).getKey(key);
+		request.onsuccess = () => {
+			r(request.result);
+		};
+		request.onerror = () => {
+			j(request.error);
+		};
+	});
+}
+export function getAll<T>(
+	name: string,
+	indexName: string,
+	mode?: IDBTransactionMode,
+	query?: IDBValidKey | IDBKeyRange | null,
+	count?: number,
+): Promise<T[]> {
+	return new Promise((r, j) => {
+		const request = getIDBIndex(name, indexName, mode).getAll(query, count);
+		request.onsuccess = () => {
+			r(request.result);
+		};
+		request.onerror = () => {
+			j(request.error);
+		};
+	});
+}
+export function getAllKeys(
+	name: string,
+	indexName: string,
+	mode?: IDBTransactionMode,
+	query?: IDBValidKey | IDBKeyRange | null,
+	count?: number,
+): Promise<IDBValidKey[]> {
+	return new Promise((r, j) => {
+		const request = getIDBIndex(name, indexName, mode).getAllKeys(query, count);
 		request.onsuccess = () => {
 			r(request.result);
 		};
