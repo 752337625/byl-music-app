@@ -21,7 +21,7 @@ export function getIDBObjectStoreInfo(name: string, mode?: IDBTransactionMode): 
  * @param name 表名
  * @param item 泛型值
  * @param key 主键值（可选）
- * @description IDBObjectStore.add()用于向对象仓库添加数据，返回一个 IDBRequest 对象。该方法只用于添加数据，如果主键相同会报错，因此更新数据必须使用put()方法。该方法接受两个参数，第一个参数是键值，第二个参数是主键，该参数可选，如果省略默认为null。
+ * @description IDBObjectStore.add()用于向对象仓库添加数据，返回一个 IDBRequest 对象。该方法只用于添加数据，如果主键相同会报错，因此更新数据必须使用put()* 方法。该方法接受两个参数，第一个参数是键值，第二个参数是主键，该参数可选，如果省略默认为null。 如果data中包含keyPath值或者此值为自增值，那么可以略去此参* 数。
  */
 export function add<T>(name: string, item: T, key?: IDBValidKey): Promise<IDBValidKey> {
 	return new Promise((r, j) => {

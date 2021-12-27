@@ -14,7 +14,7 @@ html,
 }
 .byl-header,
 .byl-main {
-	background: var(--bly-body);
+	background: var(--bly-body-fff);
 }
 .byl-header > div {
 	height: 100%;

@@ -12,7 +12,7 @@ module.exports = {
 			tsx: true,
 		},
 	},
-	globals: { IDB: 'readonly' },
+	globals: { IDB: 'readonly', appPromptEvent: 'writable' },
 	env: {
 		browser: true,
 		node: true,

@@ -22,14 +22,14 @@
 		<!-- PC端IOS系统底部banner显示的图标 -->
 		<link rel="mask-icon" href="/logo/safari-pinned-tab.svg" color="#b9652d" />
 		<!-- ios不同移动端添加主屏使用的图标,其实一个180 就够了 -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/logo/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/logo/apple-touch-icon-57x57.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="/logo/apple-touch-icon-60x60.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/logo/apple-touch-icon-72x72.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="/logo/apple-touch-icon-76x76.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/logo/apple-touch-icon-114x114.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/logo/apple-touch-icon-120x120.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/logo/apple-touch-icon-144x144.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/logo/apple-touch-icon-152x152.png" /> -->
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/logo/apple-touch-icon-152x152.png" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon-180x180.png" />
 		<!-- IOS manifest.json 兼容 -->
 		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -39,7 +39,6 @@
 	<body ontouchstart>
 		<div id="app" v-cloak></div>
 		<script type="module" src="/src/main.ts"></script>
-
 		<script>
 			document.body.addEventListener(
 				'touchmove',
@@ -52,7 +51,7 @@
 				window.addEventListener('load', function () {
 					navigator.serviceWorker
 						.register('/sw.js', { scope: '/' })
-						.then(registration => {})
+						.then(res => {})
 						.catch(err => console.log('ServiceWorker 注册失败: ', err));
 				});
 			}

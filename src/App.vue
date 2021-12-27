@@ -1,5 +1,6 @@
 <script setup lang="ts"></script>
 <template>
+	<byl-prompt></byl-prompt>
 	<byl-header></byl-header>
 	<byl-main></byl-main>
 	<byl-footer></byl-footer>
@@ -11,6 +12,7 @@
 			BylHeader: defineAsyncComponent(() => import('@v/BylHeader.vue')),
 			BylMain: defineAsyncComponent(() => import('@v/BylMain.vue')),
 			BylFooter: defineAsyncComponent(() => import('@v/BylFooter.vue')),
+			BylPrompt: defineAsyncComponent(() => import('@v/BylPrompt.vue')),
 		},
 	});
 </script>
