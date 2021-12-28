@@ -5,7 +5,7 @@
 		window.appPromptEvent = null;
 		window.addEventListener('beforeinstallprompt', event => {
 			isShowprompt.value = true;
-			appPromptEvent = event;
+			appPromptEvent = event as BeforeInstallPromptEvent;
 			event.preventDefault();
 			return false;
 		});

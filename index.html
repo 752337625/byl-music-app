@@ -47,14 +47,6 @@
 				},
 				{ passive: false },
 			);
-			if ('serviceWorker' in navigator) {
-				window.addEventListener('load', function () {
-					navigator.serviceWorker
-						.register('/sw.js', { scope: '/' })
-						.then(res => {})
-						.catch(err => console.log('ServiceWorker 注册失败: ', err));
-				});
-			}
 		</script>
 	</body>
 </html>

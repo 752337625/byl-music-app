@@ -1,8 +1,7 @@
 declare global {
 	interface Window {
-		IDB: IDBDatabase | null;
+		readonly IDB: IDBDatabase | null;
 		appPromptEvent: BeforeInstallPromptEvent | null;
 	}
 }
-
 export {};
