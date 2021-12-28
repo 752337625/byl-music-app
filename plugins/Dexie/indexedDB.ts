@@ -12,8 +12,9 @@ request.onerror = function () {
 	const error = request.error as DOMException;
 	overlayfn(error);
 };
+window.IDB;
 request.onsuccess = function () {
-	window.IDB = request.result;
+	IDB = request.result;
 };
 request.onupgradeneeded = function (event) {
 	const newVersion = event.newVersion as number;
