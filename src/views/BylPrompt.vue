@@ -2,15 +2,14 @@
 	import { ref, onBeforeMount } from 'vue';
 	let isShowprompt = ref<boolean>(false);
 	onBeforeMount(() => {
-		window.appPromptEvent = null;
-		window.addEventListener('beforeinstallprompt', event => {
+		document.addEventListener('beforeinstallprompt', event => {
 			isShowprompt.value = true;
 			appPromptEvent = event as BeforeInstallPromptEvent;
 			event.preventDefault();
 			return false;
 		});
 		//安装由未安装->安装完毕才会触发这个函数,其余安装完成后不会再触发该函数
-		window.addEventListener('appinstalled', () => {
+		document.addEventListener('appinstalled', () => {
 			isShowprompt.value = false;
 		});
 	});

@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
 	<div class="byl-main">
 		<component :is="mainComponent"></component>
@@ -19,10 +17,4 @@
 		},
 	});
 </script>
-<style scoped>
-	.byl-main {
-		overflow-y: auto;
-		transform: translateZ(0);
-		height: calc(100% - 100px);
-	}
-</style>
+<script setup lang="ts"></script>

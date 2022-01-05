@@ -1,30 +1,118 @@
-body,
 html,
-#app {
-	height: 100%;
-	width: 100%;
-	color: #000304;
-	overflow: hidden;
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	-webkit-tap-highlight-color: transparent;
 }
 [v-cloak] {
 	display: none;
 }
-.byl-header,
-.byl-main {
-	background: var(--bly-body-fff);
-}
-.byl-header > div {
+html,
+body {
 	height: 100%;
 }
-.byl-padding {
-	padding: var(--byl-padding_10);
+body {
+	color: var(--bly-body-color);
+	background-color: var(--bly-body-background);
+	max-width: 1080px;
+	overflow-x: hidden;
+	text-size-adjust: 100% !important;
+	-webkit-overflow-scrolling: touch;
+}
+#app {
+	padding-top: 54px;
+	padding-bottom: 50px;
+	height: 100%;
+}
+.byl-header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+}
+.byl-main {
+	min-height: 100%;
 }
 .byl-error {
 	color: var(--bly-body-fff);
-	font-size: var(--byl-font-size_18);
+	font-size: 18px;
 	text-align: center;
 	transform: translate(-50%, -50%);
 	position: absolute;

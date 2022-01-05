@@ -16,12 +16,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: var(--byl-padding_10);
+		padding: var(--byl-header--seacher-padding);
+		background-color: var(--byl-header-seacher-background);
 	}
 	.van-cell {
 		width: 80%;
 		border-radius: 25px;
-		padding: 5px 50px;
+		padding: 5px 20px;
+		background-color: var(--byl-header-seacher-cell-background);
 	}
 	.van-cell::after {
 		border-bottom: 0;

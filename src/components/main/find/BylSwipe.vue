@@ -1,6 +1,6 @@
 <template>
-	<div class="byl-swipe-top">
-		<van-swipe class="byl-swipe" :autoplay="6000" lazy-render>
+	<div id="byl-swipe">
+		<van-swipe class="byl-swipe" :autoplay="156000" lazy-render>
 			<van-swipe-item v-for="item in swipe" :key="item.bannerId">
 				<div>
 					<img :src="item.pic" />
@@ -20,26 +20,16 @@
 <script lang="ts">
 	import { shallowRef, defineComponent } from 'vue';
 	import { SwipeInterFace } from './find';
-	import { count, getAll, add } from '@p/Dexie/objectStore';
+	import BScroll from 'better-scroll';
 	export default defineComponent({
 		setup() {
 			let swipe = shallowRef<SwipeInterFace[]>([]);
 			return { swipe };
 		},
 		mounted() {
-			this.cachesSwipefn();
+			this.getSwipe();
 		},
 		methods: {
-			// http://p1.music.126.net/5LbGT8JAomIUQD7XIlP-TA==/109951166750404224.jpg
-			async cachesSwipefn() {
-				let res = (await count('banner')) as number;
-				if (!res) {
-					this.getSwipe();
-				} else {
-					let res = (await getAll<Array<SwipeInterFace>>('banner')) as Array<SwipeInterFace>;
-					this.swipe = res;
-				}
-			},
 			getSwipe() {
 				fetch('/api/banner?type=2')
 					.then(res => {
@@ -47,9 +37,6 @@
 					})
 					.then(res => {
 						let { banners } = res;
-						banners.forEach((element: SwipeInterFace) => {
-							add<SwipeInterFace>('banner', element);
-						});
 						this.swipe = banners;
 					});
 			},
@@ -58,15 +45,14 @@
 </script>
 
 <style scoped>
-	.byl-swipe-top {
-		background-color: var(--bly-body-fff);
+	#byl-swipe {
+		padding: 0 var(--byl-body-padding_10);
+		background-color: var(--byl-swipe-background);
 	}
-	.byl-swipe {
+	/deep/ .byl-swipe .van-swipe__track .van-swipe-item div {
 		height: 138px;
-		margin: var(--byl-padding_10) var(--byl-padding_10) 0 var(--byl-padding_10);
-		border-radius: var(--byl-border-radius_10);
 	}
-	.byl-swipe > div img {
+	/deep/.byl-swipe > div img {
 		height: 100%;
 		width: 100%;
 	}

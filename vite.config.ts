@@ -11,11 +11,18 @@ const pxtorem = require('postcss-pxtorem');
 export default ({ mode }: ConfigEnv): UserConfigExport => {
 	const root = process.cwd();
 	const env = loadEnv(mode, root);
-	const { VITE_SEVER_PORT, VITE_PUBLIC_PATH, VITE_PUBLIC_DIR } = tconversionFn(env);
+	const { VITE_SEVER_PORT, VITE_PUBLIC_PATH, VITE_PUBLIC_DIR, VITE_PUBLIC_ENV_PREFIX } = tconversionFn(env);
 	return defineConfig({
 		root,
-		base: VITE_PUBLIC_PATH,
+		base: VITE_PUBLIC_PATH, //开发或生产环境服务的公共基础路径
 		publicDir: VITE_PUBLIC_DIR,
+		envPrefix: VITE_PUBLIC_ENV_PREFIX, //以 envPrefix 开头的环境变量会通过 import.meta.env 暴露在你的客户端源码中。
+		//mode:"",
+		define: {
+			LL: true,
+			IDB: null,
+			appPromptEvent: null,
+		},
 		resolve: {
 			alias: {
 				'@': resolve(__dirname, 'src'), //把src改为@

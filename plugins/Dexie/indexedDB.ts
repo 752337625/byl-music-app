@@ -12,7 +12,6 @@ request.onerror = function () {
 	const error = request.error as DOMException;
 	overlayfn(error);
 };
-window.IDB;
 request.onsuccess = function () {
 	IDB = request.result;
 };

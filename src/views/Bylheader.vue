@@ -18,8 +18,3 @@
 		<component :is="headerComponent"></component>
 	</header>
 </template>
-<style scoped>
-	.byl-header {
-		height: 50px;
-	}
-</style>

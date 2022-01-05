@@ -1,7 +1,18 @@
 :root {
-	--bly-body: #f8f8f8;
-	--bly-body-fff: #fff;
-	--byl-padding_10: 10px;
+	/* body背景 */
+	--bly-body-background: #f7f7f7;
+	/* 全局字体颜色 */
+	--bly-body-color: #000304;
+	/*通用10_padding */
+	--byl-body-padding_10: 10px;
+	/*通用10_radius */
 	--byl-border-radius_10: 10px;
-	--byl-font-size_18: 18px;
+}
+:root {
+	--byl-header-seacher-background: #fff;
+	--byl-header--seacher-padding: 10px;
+	--byl-header-seacher-cell-background: #f6f6f6;
+}
+:root {
+	--byl-swipe-background: #fff;
 }
