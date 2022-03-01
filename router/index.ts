@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-const routes: Array<RouteRecordRaw> = [];
+import list from './modules';
+const routes: Array<RouteRecordRaw> = list;
+console.log(routes);
 const router = createRouter({
 	history: createWebHistory(),
 	routes,
