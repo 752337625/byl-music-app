@@ -1,8 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-	<router-view :name="headerName" />
-	<router-view :name="mainName" />
-	<router-view :name="footerName" />
+	<div></div>
 	<!-- <byl-prompt></byl-prompt>
 	<byl-header></byl-header>
 	<byl-main></byl-main>
