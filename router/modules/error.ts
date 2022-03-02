@@ -1,2 +1,1 @@
-const error = { path: '/:pathMatch(.*)', component: () => import('@c/error/404,vue') };
-export default error;
+export default { path: '/:pathMatch(.*)', component: () => import('@c/error/404.vue') };

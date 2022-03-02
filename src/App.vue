@@ -1,19 +1,22 @@
 <script setup lang="ts"></script>
 <template>
-	<byl-prompt></byl-prompt>
+	<router-view :name="headerName" />
+	<router-view :name="mainName" />
+	<router-view :name="footerName" />
+	<!-- <byl-prompt></byl-prompt>
 	<byl-header></byl-header>
 	<byl-main></byl-main>
-	<byl-footer></byl-footer>
+	<byl-footer></byl-footer> -->
 </template>
 <script lang="ts">
 	import { Notify } from 'vant';
 	import { defineAsyncComponent, defineComponent } from 'vue';
 	export default defineComponent({
 		components: {
-			BylHeader: defineAsyncComponent(() => import('@v/BylHeader.vue')),
-			BylMain: defineAsyncComponent(() => import('@v/BylMain.vue')),
-			BylFooter: defineAsyncComponent(() => import('@v/BylFooter.vue')),
-			BylPrompt: defineAsyncComponent(() => import('@v/BylPrompt.vue')),
+			// BylHeader: defineAsyncComponent(() => import('@v/BylHeader.vue')),
+			// BylMain: defineAsyncComponent(() => import('@v/BylMain.vue')),
+			// BylFooter: defineAsyncComponent(() => import('@v/BylFooter.vue')),
+			// BylPrompt: defineAsyncComponent(() => import('@v/BylPrompt.vue')),
 		},
 		async mounted() {
 			if ('serviceWorker' in navigator) {
