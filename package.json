@@ -22,6 +22,7 @@
 	"dependencies": {
 		"@better-scroll/core": "^2.4.2",
 		"fastclick": "v1.0.3",
+		"pinia": "^2.0.11",
 		"vant": "^3.2.5",
 		"vue": "^3.2.16",
 		"vue-router": "^4.0.12",

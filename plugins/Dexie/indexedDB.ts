@@ -14,6 +14,18 @@ request.onerror = function () {
 };
 request.onsuccess = function () {
 	IDB = request.result;
+	IDB.onclose = function () {
+		console.log('数据库手动关闭或者意外关闭');
+	};
+	IDB.onabort = function () {
+		console.log('数据库事务意外中止和手动中止');
+	};
+	IDB.onerror = function () {
+		console.log('数据库访问异常');
+	};
+	IDB.onversionchange = function () {
+		console.log('数据库版本修改触发该事件，这时候可以在这里进行表的增删改查，事务，索引等');
+	};
 };
 request.onupgradeneeded = function (event) {
 	const newVersion = event.newVersion as number;
