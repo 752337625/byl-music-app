@@ -1,9 +1,8 @@
 import { RouteRecordRaw } from 'vue-router';
-const modules = import.meta.glob('./*.ts');
+//const modules1 = import.meta.glob('./*.ts'); 注意异步导出
+const modules = import.meta.globEager('./*.ts');
 const routes: Array<RouteRecordRaw> = [];
 for (const path in modules) {
-	modules[path]().then(mod => {
-		routes.push(mod.default);
-	});
+	routes.push(modules[path].default);
 }
 export default routes;

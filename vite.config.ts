@@ -61,11 +61,11 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
 			port: VITE_SEVER_PORT,
 			open: true,
 			strictPort: false,
-			https: {
-				// 主要是下面两行的配置文件，不要忘记引入 fs 和 path 两个对象
-				cert: fs.readFileSync(path.join(__dirname, 'ssl/cert.crt')),
-				key: fs.readFileSync(path.join(__dirname, 'ssl/cert.key')),
-			},
+			// https: {
+			// 	// 主要是下面两行的配置文件，不要忘记引入 fs 和 path 两个对象
+			// 	cert: fs.readFileSync(path.join(__dirname, 'ssl/cert.crt')),
+			// 	key: fs.readFileSync(path.join(__dirname, 'ssl/cert.key')),
+			// },
 			proxy: {
 				'/api': {
 					target: 'http://47.93.3.40:3000/',

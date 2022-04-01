@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-	<div></div>
+	<router-view></router-view>
 	<!-- <byl-prompt></byl-prompt>
 	<byl-header></byl-header>
 	<byl-main></byl-main>

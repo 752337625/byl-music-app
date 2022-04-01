@@ -1,7 +1,7 @@
 export default {
-	path: '/home',
-	name: 'home',
-	component: () => import('@v/home'),
+	path: '/main',
+	name: 'main',
+	component: () => import('@v/main/index.vue'),
 	meta: {},
 	props: false,
 	beforeEnter: (to: any, from: any) => {
