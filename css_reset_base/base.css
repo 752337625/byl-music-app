@@ -85,7 +85,8 @@ video {
 	display: none;
 }
 html,
-body {
+body,
+#app {
 	height: 100%;
 }
 body {
@@ -95,28 +96,4 @@ body {
 	overflow-x: hidden;
 	text-size-adjust: 100% !important;
 	-webkit-overflow-scrolling: touch;
-}
-#app {
-	padding-top: 54px;
-	padding-bottom: 50px;
-	height: 100%;
-}
-.byl-header {
-	position: fixed;
-	left: 0;
-	top: 0;
-	right: 0;
-}
-.byl-main {
-	min-height: 100%;
-}
-.byl-error {
-	color: var(--bly-body-fff);
-	font-size: 18px;
-	text-align: center;
-	transform: translate(-50%, -50%);
-	position: absolute;
-	top: 19%;
-	left: 50%;
-	width: 87%;
 }
