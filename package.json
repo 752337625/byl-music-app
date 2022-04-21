@@ -10,7 +10,8 @@
 		"build": "vue-tsc --noEmit && vite build",
 		"serve": "vite preview",
 		"prepare": "husky install",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"install": "pnpm i"
 	},
 	"lint-staged": {
 		"*.{vue,js,ts,jsx,tsx}": [
@@ -21,10 +22,11 @@
 	},
 	"dependencies": {
 		"pinia": "^2.0.11",
-		"vant": "^3.2.5",
+		"vant": "^3.4.5",
 		"vue": "^3.2.16",
 		"vue-router": "^4.0.12",
-		"vuex": "^4.0.2"
+		"vuex": "^4.0.2",
+		"webrtc-adapter": "^8.1.1"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^13.2.1",
@@ -48,7 +50,7 @@
 		"vite": "^2.6.4",
 		"vite-plugin-banner": "^0.1.3",
 		"vite-plugin-pwa": "^0.11.10",
-		"vite-plugin-style-import": "^1.2.1",
+		"vite-plugin-style-import": "1.4.1",
 		"vite-plugin-windicss": "^1.4.12",
 		"vue-eslint-parser": "^8.0.0",
 		"vue-tsc": "^0.3.0"

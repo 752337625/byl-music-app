@@ -4,7 +4,7 @@ const path = require('path');
 const { resolve } = require('path'); //必须要引入resolve
 import { tconversionFn } from './build/utile';
 import pkg from './package.json';
-import styleImport from 'vite-plugin-style-import';
+import styleImport, { VantResolve } from 'vite-plugin-style-import';
 import vue from '@vitejs/plugin-vue';
 import Banner from 'vite-plugin-banner';
 const pxtorem = require('postcss-pxtorem');
@@ -35,7 +35,8 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
 				'@r': resolve(__dirname, 'router'), //把router改为@r
 				'@s': resolve(__dirname, 'store'), //把store改为@s
 				'@u': resolve(__dirname, 'utiles'), //把utiles改为@u
-				'@v': resolve(__dirname, './src/views'), //把views改为@v
+				'@v': resolve(__dirname, 'vant'), //把vant改为@v
+				'@sv': resolve(__dirname, './src/views'), //把views改为@sv
 			},
 			extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
 		},
@@ -61,11 +62,11 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
 			port: VITE_SEVER_PORT,
 			open: true,
 			strictPort: false,
-			// https: {
-			// 	// 主要是下面两行的配置文件，不要忘记引入 fs 和 path 两个对象
-			// 	cert: fs.readFileSync(path.join(__dirname, 'ssl/cert.crt')),
-			// 	key: fs.readFileSync(path.join(__dirname, 'ssl/cert.key')),
-			// },
+			https: {
+				// 主要是下面两行的配置文件，不要忘记引入 fs 和 path 两个对象
+				cert: fs.readFileSync(path.join(__dirname, 'ssl/cert.crt')),
+				key: fs.readFileSync(path.join(__dirname, 'ssl/cert.key')),
+			},
 			proxy: {
 				'/api': {
 					target: 'http://47.93.3.40:3000/',
@@ -77,13 +78,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
 		plugins: [
 			vue(),
 			styleImport({
-				libs: [
-					{
-						libraryName: 'vant',
-						esModule: true,
-						resolveStyle: name => `vant/es/${name}/style`,
-					},
-				],
+				resolves: [VantResolve()],
 			}),
 			Banner(
 				`/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n * description: ${pkg.description}\n * author: ${pkg.author}\n * homepage: ${pkg.homepage}\n */`,

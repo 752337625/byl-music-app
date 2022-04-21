@@ -23,7 +23,8 @@
 			"@r/*": ["./router/*"],
 			"@s/*": ["./store/*"],
 			"@u/*": ["./utiles/*"],
-			"@v/*": ["./src/views/*"]
+			"@v/*": ["./vant/*"],
+			"@sv/*": ["./src/views/*"]
 		}
 	},
 	"exclude": ["node_modules", "test", "**/__tests__", "dist/**"],
